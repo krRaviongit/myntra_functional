@@ -1,8 +1,24 @@
-let bagItems = [];
-displayItemsOnHomePage();
+let bagItems;
+onLoad();
+function onLoad(){
+ let bagItemsStr = localStorage.getItem('bagItems');
+ bagItems = bagItemsStr ? JSON.parse(bagItemsStr) : [];
+  displayItemsOnHomePage();
+  displayBagIcon();
+}
 function addToBag(itemId) {
  bagItems.push(itemId);
-
+ localStorage.setItem('bagItems', JSON.stringify(bagItems));
+ displayBagIcon();
+}
+function displayBagIcon() {
+ let bagIconCountElement = document.querySelector('.bag-item-count');
+ if(bagItems.length > 0){
+  bagIconCountElement.style.visibility= 'visible';
+  bagIconCountElement.innerHTML = bagItems.length;
+ }else{
+  bagIconCountElement.style.visibility= 'hidden';
+ }
 }
 function displayItemsOnHomePage(){
  let itemsContainerElement = document.querySelector('.items-container');
