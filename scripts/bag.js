@@ -34,11 +34,11 @@ function generateItemHTML(item){
                 <span class="discount-percentage">(${item.discount_percentage}% OFF)</span>
               </div>
               <div class="return-period">
-                <span class="return-period-days">14 days</span> return available
+                <span class="return-period-days">${item.return_period}days</span> return available
               </div>
               <div class="delivery-details">
                 Delivery by
-                <span class="delivery-details-days">10 Oct 2023</span>
+                <span class="delivery-details-days">${item.delivery_date}</span>
               </div>
             </div>
 
