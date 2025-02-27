@@ -17,7 +17,12 @@ function loadBagItemsObjects(){
 }
 function displayBagItems(){
  let containerElement = document.querySelector('.bag-items-container');
-//  containerElement.innerHTML = ;
+ let innerHTML = '';
+bagItemObjects.forEach(bagItem => {
+  innerHTML += generateItemHTML(bagItem);
+});
+ containerElement.innerHTML = innerHTML;
+
 }
 function generateItemHTML(item){
   return `
