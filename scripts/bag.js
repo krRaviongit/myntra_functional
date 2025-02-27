@@ -17,18 +17,21 @@ function loadBagItemsObjects(){
 }
 function displayBagItems(){
  let containerElement = document.querySelector('.bag-items-container');
- containerElement.innerHTML = `
+//  containerElement.innerHTML = ;
+}
+function generateItemHTML(item){
+  return `
   <div class="bag-item-container">
             <div class="item-left-part">
-              <img class="bag-item-img" src="../images/4.jpg" alt="item">
+              <img class="bag-item-img" src="../${item.image}" alt="item">
             </div>
             <div class="item-right-part">
-              <div class="company">ADIDAS</div>
-              <div class="item-name">Men Printed Polo Collar Indian Cricket ODI Jersey</div>
+              <div class="company">${item.company}</div>
+              <div class="item-name">${item.item_name}</div>
               <div class="price-container">
-                <span class="current-price">Rs 999</span>
-                <span class="original-price">Rs 999</span>
-                <span class="discount-percentage">(0% OFF)</span>
+                <span class="current-price">Rs ${item.current_price}</span>
+                <span class="original-price">Rs ${item.original_price}</span>
+                <span class="discount-percentage">(${item.discount_percentage}% OFF)</span>
               </div>
               <div class="return-period">
                 <span class="return-period-days">14 days</span> return available
@@ -40,6 +43,5 @@ function displayBagItems(){
             </div>
 
             <div class="remove-from-cart">X</div>
-          </div>
- `;
+          </div>`
 }
