@@ -314,6 +314,12 @@ header {
   padding: 5px 15px;
   border-radius: 10px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+.btn-add-bag:hover{
+  background-color: #00891b;
+  transform: scale(1.07);
 }
 .bag-item-count{
   background-color: #f16565;
